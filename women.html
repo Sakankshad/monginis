@@ -8,25 +8,276 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <link rel="icon" href="img/monginis-logo-emblem.jpg" type="image/x-icon">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <style type="text/css">
+
+      .pre-loader {
+        z-index: 999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ec008c; 
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .pre-loader .shape {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-5em);
+      }
+
+      .pre-loader .shape .circle {
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 0 1rem;
+        animation: bounce 0.6s linear infinite;
+      }
+      .pre-loader .shape .circle:nth-child(2) {
+        background-color: #2e3192;
+        animation-delay: 0.1s;
+      }
+      .pre-loader .shape .circle:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      .pre-loader .shadow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-5em);
+      }
+
+      .pre-loader .shadow .shape-shadow {
+        width: 50px;
+        height: 18px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        margin: 0 1rem;
+        animation: bounceShadow 0.6s linear infinite;
+        transform: translateY(5em) scale(0.5);
+      }
+      .pre-loader .shadow .shape-shadow:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .pre-loader .shadow .shape-shadow:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      @keyframes bounce {
+        from,
+        to {
+          transform: translateY(0) scale(1, 1);
+          animation-timing-function: ease-in;
+        }
+        45% {
+          transform: translateY(5em) scale(1, 1);
+          animation-timing-function: linear;
+        }
+        50% {
+          transform: translateY(5em) scale(1.5, 0.5);
+          animation-timing-function: linear;
+        }
+        100% {
+          transform: translateY(5em) scale(1, 1);
+          animation-timing-function: ease-out;
+        }
+      }
+      @keyframes bounceShadow {
+        from,
+        to {
+          transform: translateY(5em) scale(0.5);
+          filter: blur(5px);
+        }
+        45% {
+          transform: translateY(5em) scale(0.5);
+          /*     transform: translateY(5em) scale(1); */
+          /*     filter: blur(5px); */
+        }
+        50% {
+          box-shadow: 20px 0 5px rgba(0, 0, 0, 0.1), -20px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        100% {
+          transform: translateY(5em) scale(0.5);
+          box-shadow: unset;
+        }
+      }
+
       @font-face {
           font-family: Mons;
           src: url(fonts/Montserrat-ExtraBold.otf);
         }
+
+      .form-control {
+        text-align: center;
+      }
+
+      .form-control::-webkit-input-placeholder {
+          color: #ec008c;
+          text-align: center;
+          font-weight: bold;
+      }
+
+      .form-control:-ms-input-placeholder {
+          color: #ec008c;
+          text-align: center;
+          font-weight: bold;
+      }
+
+      .form-control::-ms-input-placeholder {
+          color: #ec008c;
+          text-align: center;
+          font-weight: bold;
+      }
+
+      .form-control::placeholder {
+          color: #ec008c;
+          text-align: center;
+          font-weight: bold;
+      }
+
+      input:focus { 
+        border: 3px solid #ec008c !important;
+        box-shadow: 0 0 3px #ec008c !important;
+        -moz-box-shadow: 0 0 3px #ec008c !important;
+        -webkit-box-shadow: 0 0 3px #ec008c !important;
+      }
+      textarea:focus { 
+        border: 3px solid #ec008c !important;
+        box-shadow: 0 0 3px #ec008c !important;
+        -moz-box-shadow: 0 0 3px #ec008c !important;
+        -webkit-box-shadow: 0 0 3px #ec008c !important;
+      }
+
+      .btn.submit-btn {
+          background: #ec008c;
+          height: 48px;
+          min-width: 185px;
+          color: #ffffff;
+          font-weight: 500;
+          border-radius: 22px 25px 22px 0;
+      }
+
+      .btn.submit-btn:hover {
+          background: #2e3192;
+          color: #fff;
+          -webkit-transition-duration: 500ms;
+          -o-transition-duration: 500ms;
+          transition-duration: 500ms;
+      }
+
+      .btn.submit-btn:focus {
+          background: #ec008c;
+          color: #f8951d;
+          -webkit-transition-duration: 500ms;
+          -o-transition-duration: 500ms;
+          transition-duration: 500ms;
+      }
+
     </style>
     
   </head>
   <body style="margin: 0;">
-    
-      <section style="width: 100%; height: 100vh; background: url('img/bg.png') no-repeat; background-size: cover; padding: 0; margin: 0; display: flex; align-items: center;">
-        <div style="padding: 50px; filter: drop-shadow(-8px 8px 2px rgba(0, 0, 0, 0.2)); margin: auto;">
-          <img src="img/monginis-logo.png" width="100%" style="max-width: 500px; margin: auto; display: flex; margin: auto; filter: drop-shadow(-8px 8px 2px rgba(0, 0, 0, 0.2));">
-          <p style="font-size: 40px; font-weight: bold; color: #fff; text-align: center; margin-top: 25px; font-family: Mons; filter: drop-shadow(-4px 4px 2px rgba(0, 0, 0, 0.2)); ">
-            will be live soon!
-          </p>
+
+      <div class="pre-loader">
+        <div class="shape">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
+        <div class="shadow">
+          <div class="shape-shadow"></div>
+          <div class="shape-shadow"></div>
+          <div class="shape-shadow"></div>
+        </div>
+      </div>
+    
+      <section style="width: 100%; min-height: 100vh; background: url('img/bg.png') no-repeat; background-size: cover; padding: 50px 0; margin: 0; display: flex; align-items: center;">
+                <div class="container">
+                    <div style="background-color: white; padding:50px 15px 50px 15px; border-radius: 25px;">
+                        <img src="img/monginis-logo.jpg" style="width: 100%; max-width: 150px; display: flex; margin: auto; margin-bottom: 25px;">
+                        <form action="#" class="billing-form enquiry" id="social-form">
+                            <div class="contact_input_area">
+                                <div class="row" style="justify-content: center">
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Name" id="name" placeholder="Your Name" required value="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" name="Contact Number" id="number" placeholder="Contact Number 1" required value="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" name="Alt. Contact Number" id="number" placeholder="Contact Number 2" value="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="Email" id="email" placeholder="Your E-mail" value="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="Insta User Id" id="insta" placeholder="Instagram User Id" value="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-6">
+                                        <div class="form-group" style="text-align: center;">
+                                            <p style="display: inline; width: auto; max-width: 100px; padding-right: 10px; color: #ec008c; font-weight: bold;">
+                                              Birthday :
+                                            </p>
+                                            <input style="display: inline; width: auto; max-width: 75px; " type="number" class="form-control" name="Date" id="date" placeholder="DD" value="">
+                                            <input style="display: inline; width: auto; max-width: 75px;" type="number" class="form-control" name="Month" id="month" placeholder="MM" value="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea name="Story" class="form-control" id="message" cols="30" rows="4" placeholder="Your Story" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12" style="text-align: center; margin-top: 25px;">
+                                        <button type="submit" class="btn submit-btn">Submit</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
       </section>
+
+      <!-- Jquery-2.2.4 JS -->
+      <script src="js/jquery-2.2.4.min.js"></script>
+
+      <script src="js/formData.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+            
+            $('.pre-loader').fadeOut('slow', function () {
+                $(this).remove();
+
+            });
+        });
+      </script>
 
   </body>
 </html>
