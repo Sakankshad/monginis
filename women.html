@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <link rel="icon" href="img/monginis-logo-emblem.jpg" type="image/x-icon">
+    <link rel="icon" href="img/monginis-logo-emblem.png" type="image/x-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <style type="text/css">
@@ -111,8 +111,18 @@
       }
 
       @font-face {
-          font-family: Mons;
+          font-family: MonsExtraBold;
           src: url(fonts/Montserrat-ExtraBold.otf);
+        }
+
+      @font-face {
+          font-family: MonsSemiBold;
+          src: url(fonts/Montserrat-SemiBold.otf);
+        }
+
+      @font-face {
+          font-family: hobo;
+          src: url(fonts/hobostd.otf);
         }
 
       .form-control {
@@ -181,6 +191,14 @@
           transition-duration: 500ms;
       }
 
+      @media (max-width: 992px) {
+        .col-md-10 {
+          text-align: center;
+          padding-top: 15px;
+          padding-bottom: 25px;
+        }
+      }
+
     </style>
     
   </head>
@@ -199,10 +217,64 @@
         </div>
       </div>
     
-      <section style="width: 100%; min-height: 100vh; background: url('img/bg.png') no-repeat; background-size: cover; padding: 50px 0; margin: 0; display: flex; align-items: center;">
+      <section style="width: 100%; min-height: 100vh; background: url('img/bg.png') no-repeat; background-size: cover; padding: 50px 0; margin: 0; align-items: center;">
                 <div class="container">
                     <div style="background-color: white; padding:50px 15px 50px 15px; border-radius: 25px;">
-                        <img src="img/monginis-logo.jpg" style="width: 100%; max-width: 150px; display: flex; margin: auto; margin-bottom: 25px;">
+                        <img src="img/monginis-logo.jpg" style="width: 75%; max-width: 150px; display: flex; margin: auto; margin-bottom: 25px;">
+                        <img src="img/speak-like-woman.png" style="width: 100%; max-width: 500px; display: flex; margin: auto;">
+                        <p style="color: #ec008c; font-family: MonsSemiBold; text-align: center; max-width: 750px; margin: 25px auto">
+                          We all have stories to tell, but we don't speak out because we feel they aren't  great enough! 
+                          </br>
+                          </br>
+                          From overcoming your fears to taking bolder moves in life, there are many 
+                          stories you have lived so far. And these stories may feel ordinary to you, but It might seem extraordinary to someone else. 
+                          </br>
+                          </br>
+                          There's no rightway to tell stories, so share 
+                          it in the way that works the best for you. 
+                        </p>
+                        <div class="row" style="max-width: 900px; margin: 50px auto;">
+                          <div class="col-md-6" style="margin-bottom: 50px;">
+                            <p style="font-family:MonsExtraBold; text-align: center; color: #ec008c; font-size: 25px; margin-bottom: 30px">
+                              Steps to Follow :
+                            </p>
+                            <p style="font-family: MonsSemiBold; color: #ec008c;">
+                              <span style="font-family:MonsExtraBold;">STEP 1 :</span> Follow <a style="font-family:MonsExtraBold; color: #ec008c;" href="https://www.instagram.com/monginis_bihar/?hl=en" target="_blank"> @monginis_bihar</a> on instagram.
+                              </br>
+                              </br>
+                              <span style="font-family:MonsExtraBold;">STEP 2 :</span> Fill the form below. Tell us about your accomplishments. Write your story. However small it is, we will celebrate it with you.
+                            </p>
+                          </div>
+                          <div class="col-md-6" >
+                            <p style="font-family:MonsExtraBold; text-align: center; color: #ec008c; font-size: 25px; margin-bottom: 30px">
+                              Rewards<span style="font-family: MonsSemiBold">*</span>
+                              <div class="row" style="margin-bottom: 25px">
+                                <div class="col-md-2" style="margin: auto; padding: 0; max-width: 75px">
+                                  <img src="img/insta.png" style="width: 100%; filter: invert(11%) sepia(100%) saturate(6899%) hue-rotate(318deg) brightness(96%) contrast(101%);">
+                                </div>
+                                <div class="col-md-10" style="font-family:MonsSemiBold; color: #ec008c; margin: auto;">
+                                  Your story will be featured on our social media platforms.
+                                </div>
+                              </div>
+                              <div class="row" style="margin-bottom: 25px">
+                                <div class="col-md-2" style="margin: auto; padding: 0; max-width: 75px">
+                                  <img src="img/store.png" style="width: 100%; filter: invert(11%) sepia(100%) saturate(6899%) hue-rotate(318deg) brightness(96%) contrast(101%);">
+                                </div>
+                                <div class="col-md-10" style="font-family:MonsSemiBold; color: #ec008c; margin: auto;">
+                                  Featured story at 50+ Monginis outlets in Bihar.
+                                </div>
+                              </div>
+                              <div class="row" style="margin-bottom: 25px">
+                                <div class="col-md-2" style="margin: auto; padding: 0; max-width: 75px">
+                                  <img src="img/gift.png" style="width: 100%; filter: invert(11%) sepia(100%) saturate(6899%) hue-rotate(318deg) brightness(96%) contrast(101%);">
+                                </div>
+                                <div class="col-md-10" style="font-family:MonsSemiBold; color: #ec008c; margin: auto;">
+                                  An accomplishment Gift Hamper from Monginis.
+                                </div>
+                              </div>
+                            </p>
+                          </div>
+                        </div>
                         <form action="#" class="billing-form enquiry" id="social-form">
                             <div class="contact_input_area">
                                 <div class="row" style="justify-content: center">
@@ -261,6 +333,12 @@
                             </div>
                         </form>
                     </div>
+                </div>
+                <p style="color: #ffffff; text-align: center; display: block; font-size: 10px; margin-top: 10px">
+                  *T&C - To selected entries only. 
+                </p>
+                <div style="margin-bottom: -50px; margin-top: 25px; display: flex; justify-content: center;">
+                  <p style="text-align: center; padding: 10px 15px; border-radius: 10px; background-color: #ffffff; color: #ec008c"><a href="https://loons.co.in/" target="_blank" style="cursor: pointer; color: #ec008c; font-family: MonsSemiBold; text-decoration: none;">Event Managed by <span style="font-family: hobo; color: #00abb6; font-size: 15px; cursor: pointer;">Lo<span style="color: #f8951d; cursor: pointer;">O</span>ns</span></a></p>
                 </div>
       </section>
 
